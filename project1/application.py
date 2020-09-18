@@ -5,7 +5,7 @@ from models import *
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '093659'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://qmavfxyyageuqp:39c9ae65cedc38c272eb45923218ac0ab57b18095d2ee12c5859c14b483e6126@ec2-46-137-124-19.eu-west-1.compute.amazonaws.com:5432/d55p1326t98kv7'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'database'
 db = SQLAlchemy(app)
 
 
