@@ -1,6 +1,6 @@
 # Readers-library
 
-This is an example of what the application looks like.
+This is an example of how application looks like.
 
 <img src="photos/Καταγραφή.PNG" width="400" height="200">
 <i style="margin-bottom: 5px;">Image 1. The first page. Users can login or register.</i>
