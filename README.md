@@ -15,4 +15,4 @@ This is an example of how application looks like.
 <i style="margin-bottom: 5px;">Image 4. Book page.</i>
 
 <img src="photos/5.PNG" width="400" height="200">
-<i style="margin-bottom: 5px;">Image 5. Book reviews on books page.</i>
+<i style="margin-bottom: 5px;">Image 5. User profile page, where users can see their reviews.</i>
