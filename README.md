@@ -15,7 +15,7 @@ This is an example of how Readers-library looks like.
 <i style="margin-bottom: 5px;">Image 4. Book page.</i>
 
 <img src="photos/6.PNG" width="400" height="200">
-<i style="margin-bottom: 5px;">Image 4. Review form.</i>
+<i style="margin-bottom: 5px;">Image 5. Review form.</i>
 
 <img src="photos/5.PNG" width="400" height="200">
-<i style="margin-bottom: 5px;">Image 5. User profile page, where users can see their reviews.</i>
+<i style="margin-bottom: 5px;">Image 6. User profile page, where users can see their reviews.</i>
