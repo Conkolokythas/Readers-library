@@ -5,7 +5,7 @@ from models import *
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '093659'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'database'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://qmavfxyyageuqp:39c9ae65cedc38c272eb45923218ac0ab57b18095d2ee12c5859c14b483e6126@ec2-46-137-124-19.eu-west-1.compute.amazonaws.com:5432/d55p1326t98kv7'
 db = SQLAlchemy(app)
 
 
@@ -85,8 +85,12 @@ def book(book_t):
         session['book'] = b.title
         r = Review.query.filter_by(book=b.title).all()
         db.session.commit()
-        res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "wEchipPb45buJdleclKFHA", "isbns": b.isbn}).json()
-        b_rating = res['books'][0]['average_rating']
+        # Goodreads API doesn' t work.
+        #res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "wEchipPb45buJdleclKFHA", "isbns": b.isbn}).json()
+        #if res.status_code == 200:
+         #   b_rating = res['books'][0]['average_rating']
+        #else:
+        b_rating = "Can not connect to Goodreads API."
         return render_template("book.html", user=session['username'], title=b.title, id=b.id, author=b.author, year=b.year, isbn=b.isbn, reviews=r, gr_rating=b_rating)
     else:
         return render_template("login.html")
@@ -125,10 +129,8 @@ def submit():
 def profile(user_name):
     if "username" in session:
         u = User.query.filter_by(username=user_name).first()
-        book = session['book']
-        b = Book.query.filter_by(title=book).first()
         p = Review.query.filter_by(user=session['username']).all()
-        return render_template("profile.html", user=u.username, title=b.title, author=b.author, year=b.year, post=p)
+        return render_template("profile.html", user=u.username, post=p)
     else:
         return render_template("login.html")
 
