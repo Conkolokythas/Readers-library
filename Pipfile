@@ -10,6 +10,7 @@ Flask = "*"
 Flask-Session = "*"
 SQLAlchemy = "*"
 gunicorn = "*"
+flask-sqlalchemy = "*"
 
 [dev-packages]
 
